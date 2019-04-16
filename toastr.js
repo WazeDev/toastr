@@ -19,8 +19,8 @@
             var toastId = 0;
             var toastType = {
                 error: 'error',
-                info: 'info',,
-                prompt: 'prompt'
+                info: 'info',
+                prompt: 'prompt',
                 success: 'success',
                 warning: 'warning'
             };
