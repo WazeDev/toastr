@@ -8,7 +8,7 @@ Browser testing provided by BrowserStack.
 2.1.4
 
 ## Demo
-- Demo can be found at https://github.com/WazeDev/toastr/demo.html
+- Demo can be found at https://wazedev.github.io/toastr/demo.html
 
 ## CDNs
 [![cdnjs](https://img.shields.io/cdnjs/v/toastr.js.svg)](https://cdnjs.com/libraries/toastr.js)
