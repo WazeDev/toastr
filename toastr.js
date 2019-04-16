@@ -18,6 +18,7 @@
             var listener;
             var toastId = 0;
             var toastType = {
+                confirm: 'confirm',
                 error: 'error',
                 info: 'info',
                 prompt: 'prompt',
@@ -27,6 +28,7 @@
 
             var toastr = {
                 clear: clear,
+                confirm: confirm,
                 remove: remove,
                 error: error,
                 getContainer: getContainer,
@@ -118,6 +120,16 @@
                     clearContainer(options);
                 }
             }
+            
+            function confirm($toastElement, clearOptions){
+                return notify({
+                    type: toastType.confirm,
+                    iconClass: getOptions().iconClasses.confirm,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
 
             function remove($toastElement) {
                 var options = getOptions();
@@ -184,6 +196,7 @@
 
                     extendedTimeOut: 1000,
                     iconClasses: {
+                        confirm: 'toast-confirm',
                         error: 'toast-error',
                         info: 'toast-info',
                         prompt: 'toast-prompt',
