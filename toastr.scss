@@ -69,12 +69,12 @@ button.toast-close-button {
 .toast-top-center-wide {
   top: 0;
   right: 0;
-  width: 50%;
+  width: 100%;
 }
 .toast-bottom-center-wide {
   top: 0;
   right: 0;
-  width: 50%;
+  width: 100%;
 }
 .toast-top-left {
   top: 12px;
@@ -152,6 +152,12 @@ button.toast-close-button {
 #toast-container-wazedev.toast-top-full-width > div,
 #toast-container-wazedev.toast-bottom-full-width > div {
   width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#toast-container-wazedev.toast-top-center-wide > div,
+#toast-container-wazedev.toast-bottom-center-wide > div {
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
