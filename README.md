@@ -8,8 +8,7 @@ Browser testing provided by BrowserStack.
 2.1.4
 
 ## Demo
-- Demo can be found at http://codeseven.github.io/toastr/demo.html
-- [Demo using FontAwesome icons with toastr](http://plnkr.co/edit/6W9URNyyp2ItO4aUWzBB?p=preview)
+- Demo can be found at https://wazedev.github.io/toastr/demo.html
 
 ## CDNs
 [![cdnjs](https://img.shields.io/cdnjs/v/toastr.js.svg)](https://cdnjs.com/libraries/toastr.js)
