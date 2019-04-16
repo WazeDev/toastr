@@ -154,7 +154,7 @@
                 return {
                     tapToDismiss: true,
                     toastClass: 'toast',
-                    containerId: 'toast-container',
+                    containerId: 'toast-container-wazedev',
                     debug: false,
 
                     showMethod: 'fadeIn', //fadeIn, slideDown, and show are built into jQuery
