@@ -19,7 +19,8 @@
             var toastId = 0;
             var toastType = {
                 error: 'error',
-                info: 'info',
+                info: 'info',,
+                prompt: 'prompt'
                 success: 'success',
                 warning: 'warning'
             };
@@ -31,6 +32,7 @@
                 getContainer: getContainer,
                 info: info,
                 options: {},
+                prompt: prompt,
                 subscribe: subscribe,
                 success: success,
                 version: '2.1.4',
@@ -77,6 +79,16 @@
 
             function subscribe(callback) {
                 listener = callback;
+            }
+            
+            function prompt(message, title, optionsOverride){
+                return notify({
+                    type: toastType.prompt,
+                    iconClass: getOptions().iconClasses.prompt,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
             }
 
             function success(message, title, optionsOverride) {
@@ -174,6 +186,7 @@
                     iconClasses: {
                         error: 'toast-error',
                         info: 'toast-info',
+                        prompt: 'toast-prompt',
                         success: 'toast-success',
                         warning: 'toast-warning'
                     },
