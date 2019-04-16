@@ -121,7 +121,7 @@
                 }
             }
             
-            function confirm($toastElement, clearOptions){
+            function confirm(message, title, optionsOverride){
                 return notify({
                     type: toastType.confirm,
                     iconClass: getOptions().iconClasses.confirm,
