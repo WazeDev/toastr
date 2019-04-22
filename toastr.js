@@ -246,6 +246,8 @@
                 var $messageElement = $('<div/>');
                 var $progressElement = $('<div/>');
                 var $closeElement = $(options.closeHtml);
+				var $promptElements = $('<div/>');
+				var $confirmElements = $('<div/>');
                 var progressBar = {
                     intervalId: null,
                     hideEta: null,
@@ -290,6 +292,7 @@
                     setIcon();
                     setTitle();
                     setMessage();
+					setPromptElements();
                     setCloseButton();
                     setProgressBar();
                     setRTL();
@@ -395,6 +398,13 @@
                         $toastElement.append($messageElement);
                     }
                 }
+				
+				function setPromptElements(){
+					if(map.type === 'prompt'){
+						$promptElements.append('<button>Ok</button><button>Cancel</button>');
+						$toastElement.append($promptElements);
+					}
+				}
 
                 function setCloseButton() {
                     if (options.closeButton) {
