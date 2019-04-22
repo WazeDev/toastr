@@ -26,7 +26,7 @@
                 warning: 'warning'
             };
 
-            var toastr = {
+            var wazedevtoastr = {
                 clear: clear,
                 confirm: confirm,
                 remove: remove,
@@ -43,7 +43,7 @@
 
             var previousToast;
 
-            return toastr;
+            return wazedevtoastr;
 
             ////////////////
 
@@ -475,7 +475,7 @@
             }
 
             function getOptions() {
-                return $.extend({}, getDefaults(), toastr.options);
+                return $.extend({}, getDefaults(), wazedevtoastr.options);
             }
 
             function removeToast($toastElement) {
@@ -497,6 +497,6 @@
     if (typeof module !== 'undefined' && module.exports) { //Node
         module.exports = factory(require('jquery'));
     } else {
-        window.toastr = factory(window.jQuery);
+        window.wazedevtoastr = factory(window.jQuery);
     }
 }));
