@@ -251,7 +251,7 @@
             var toastIndex = toastCount++;
             var addClear = $('#addClear').prop('checked');
 
-            toastr.options = {
+            wazedevtoastr.options = {
                 closeButton: $('#closeButton').prop('checked'),
                 debug: $('#debugInfo').prop('checked'),
                 newestOnTop: $('#newestOnTop').prop('checked'),
@@ -263,67 +263,67 @@
             };
 
             if ($('#addBehaviorOnToastClick').prop('checked')) {
-                toastr.options.onclick = function () {
+                wazedevtoastr.options.onclick = function () {
                     alert('You can perform some custom action after a toast goes away');
                 };
             }
 
             if ($('#addBehaviorOnToastCloseClick').prop('checked')) {
-                toastr.options.onCloseClick = function () {
+                wazedevtoastr.options.onCloseClick = function () {
                     alert('You can perform some custom action when the close button is clicked');
                 };
             }
 
             if ($showDuration.val().length) {
-                toastr.options.showDuration = parseInt($showDuration.val());
+                wazedevtoastr.options.showDuration = parseInt($showDuration.val());
             }
 
             if ($hideDuration.val().length) {
-                toastr.options.hideDuration = parseInt($hideDuration.val());
+                wazedevtoastr.options.hideDuration = parseInt($hideDuration.val());
             }
 
             if ($timeOut.val().length) {
-                toastr.options.timeOut = addClear ? 0 : parseInt($timeOut.val());
+                wazedevtoastr.options.timeOut = addClear ? 0 : parseInt($timeOut.val());
             }
 
             if ($extendedTimeOut.val().length) {
-                toastr.options.extendedTimeOut = addClear ? 0 : parseInt($extendedTimeOut.val());
+                wazedevtoastr.options.extendedTimeOut = addClear ? 0 : parseInt($extendedTimeOut.val());
             }
 
             if ($showEasing.val().length) {
-                toastr.options.showEasing = $showEasing.val();
+                wazedevtoastr.options.showEasing = $showEasing.val();
             }
 
             if ($hideEasing.val().length) {
-                toastr.options.hideEasing = $hideEasing.val();
+                wazedevtoastr.options.hideEasing = $hideEasing.val();
             }
 
             if ($showMethod.val().length) {
-                toastr.options.showMethod = $showMethod.val();
+                wazedevtoastr.options.showMethod = $showMethod.val();
             }
 
             if ($hideMethod.val().length) {
-                toastr.options.hideMethod = $hideMethod.val();
+                wazedevtoastr.options.hideMethod = $hideMethod.val();
             }
 
             if (addClear) {
                 msg = getMessageWithClearButton(msg);
-                toastr.options.tapToDismiss = false;
+                wazedevtoastr.options.tapToDismiss = false;
             }
             if (!msg) {
                 msg = getMessage();
             }
 
-            $('#toastrOptions').text('Command: toastr["'
+            $('#toastrOptions').text('Command: wazedevtoastr["'
                     + shortCutFunction
                     + '"]("'
                     + msg
                     + (title ? '", "' + title : '')
-                    + '")\n\ntoastr.options = '
-                    + JSON.stringify(toastr.options, null, 2)
+                    + '")\n\wazedevtoastr.options = '
+                    + JSON.stringify(wazedevtoastr.options, null, 2)
             );
 
-            var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+            var $toast = wazedevtoastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
             $toastlast = $toast;
 
             if(typeof $toast === 'undefined'){
@@ -343,7 +343,7 @@
             }
             if ($toast.find('.clear').length) {
                 $toast.delegate('.clear', 'click', function () {
-                    toastr.clear($toast, { force: true });
+                    wazedevtoastr.clear($toast, { force: true });
                 });
             }
         });
@@ -352,10 +352,10 @@
             return $toastlast;
         }
         $('#clearlasttoast').click(function () {
-            toastr.clear(getLastToast());
+            wazedevtoastr.clear(getLastToast());
         });
         $('#cleartoasts').click(function () {
-            toastr.clear();
+            wazedevtoastr.clear();
         });
     })
 </script>
