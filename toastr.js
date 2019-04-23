@@ -216,7 +216,8 @@
                     preventDuplicates: false,
                     progressBar: false,
                     progressClass: 'toast-progress',
-                    rtl: false
+                    rtl: false,
+					PromptDefaultInput: ''
                 };
             }
 
@@ -457,6 +458,8 @@
 						
 						$promptElements.append($promptButtons);
 						$toastElement.append($promptElements);
+						
+						$promptInput.val(map.PromptDefaultInput);
 					}
 				}
 				
