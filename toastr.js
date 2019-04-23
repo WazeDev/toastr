@@ -362,7 +362,7 @@
 					if(map.type === 'prompt'){
 						$promptOk.click(function(event){
 							if(options.promptOK){
-								options.promptOK(event);
+								options.promptOK(event, $promptInput.val());
 							}
 							hideToast(true);
 						});
@@ -370,6 +370,22 @@
 						$promptCancel.click(function(event){
 							if(options.promptCancel){
 								options.promptCancel(event);
+							}
+							hideToast(true);
+						});
+					}
+					
+					if(map.type === 'confirm'){
+						$promptOk.click(function(event){
+							if(options.confirmOK){
+								options.confirmOK(event);
+							}
+							hideToast(true);
+						});
+						
+						$promptCancel.click(function(event){
+							if(options.confirmCancel){
+								options.confirmCancel(event);
 							}
 							hideToast(true);
 						});
