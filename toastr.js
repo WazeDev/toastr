@@ -249,11 +249,11 @@
                 var $progressElement = $('<div/>');
                 var $closeElement = $(options.closeHtml);
 				var $promptElements = $('<div/>');
-				var $promptOk = $('<button class="btn btn-primary toast-ok-button">Ok</button>');
+				var $promptOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
 				var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
 				var $promptInput = $('<input type="text"/>');
 				var $confirmElements = $('<div/>');
-				var $confirmOk = $('<button class="btn btn-primary toast-ok-button">Ok</button>');
+				var $confirmOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
 				var $confirmCancel = $('<button class="btn btn-danger">Cancel</button>');
                 var progressBar = {
                     intervalId: null,
