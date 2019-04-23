@@ -210,6 +210,9 @@ button.toast-close-button {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   filter: alpha(opacity=40);
 }
+.toast-ok-btn {
+  margin-right: 8px;
+}
 /*Responsive Design*/
 @media all and (max-width: 240px) {
   #toast-container-wazedev > div {
