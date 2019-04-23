@@ -271,7 +271,7 @@
 
                 displayToast();
 
-                handleEvents();
+                handleEvents(map);
 
                 publish(response);
 
@@ -327,7 +327,7 @@
                     $toastElement.attr('aria-live', ariaValue);
                 }
 
-                function handleEvents() {
+                function handleEvents(map) {
                     if (options.closeOnHover) {
                         $toastElement.hover(stickAround, delayedHideToast);
                     }
@@ -359,19 +359,20 @@
                         });
                     }
 					
-					if(options.type === 'prompt'){
-						if(options.promptOK){
-							$promptOk.click(function(event){
+					if(map.type === 'prompt'){
+						$promptOk.click(function(event){
+							if(options.promptOK){
 								options.promptOK(event);
-								hideToast(true);
-							});
-						}
-						if(options.promptCancel){
-							$promptCancel.click(function(event){
+							}
+							hideToast(true);
+						});
+						
+						$promptCancel.click(function(event){
+							if(options.promptCancel){
 								options.promptCancel(event);
-								hideToast(true);
-							});
-						}
+							}
+							hideToast(true);
+						});
 					}
                 }
 
