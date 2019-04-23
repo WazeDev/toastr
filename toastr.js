@@ -234,6 +234,8 @@
                     iconClass = map.optionsOverride.iconClass || iconClass;
                 }
 
+				forceOptions();
+				
                 if (shouldExit(options, map)) { return; }
 
                 toastId++;
@@ -264,7 +266,6 @@
                     map: map
                 };
 				
-				forceOptions();
 
                 personalizeToast();
 
@@ -294,10 +295,10 @@
                 }
 				
 				function forceOptions(){
-					if(map.type === "prompt"){
-						map.tapToDismiss = false;
-						map.timeOut = 0;
-						map.extendedTimeOut = 0;
+					if(options.type === "prompt"){
+						options.tapToDismiss = false;
+						options.timeOut = 0;
+						options.extendedTimeOut = 0;
 					}
 				}
 
