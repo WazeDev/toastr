@@ -349,16 +349,18 @@
                     }
 					
 					if(options.type === 'prompt'){
-						if(options.promptOK)
+						if(options.promptOK){
 							$promptOk.click(function(event){
 								options.promptOK(event);
 								hideToast(true);
-							}
-						if(options.promptCancel)
+							});
+						}
+						if(options.promptCancel){
 							$promptCancel.click(function(event){
 								options.promptCancel(event);
 								hideToast(true);
-							}
+							});
+						}
 					}
                 }
 
