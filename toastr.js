@@ -295,7 +295,7 @@
                 }
 				
 				function forceOptions(){
-					if(options.type === "prompt"){
+					if(map.type === "prompt"){
 						options.tapToDismiss = false;
 						options.timeOut = 0;
 						options.extendedTimeOut = 0;
