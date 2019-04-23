@@ -309,6 +309,7 @@
                     setTitle();
                     setMessage();
 					setPromptElements();
+					setConfirmElements();
                     setCloseButton();
                     setProgressBar();
                     setRTL();
@@ -378,14 +379,14 @@
 					}
 					
 					if(map.type === 'confirm'){
-						$promptOk.click(function(event){
+						$confirmOk.click(function(event){
 							if(options.confirmOK){
 								options.confirmOK(event);
 							}
 							hideToast(true);
 						});
 						
-						$promptCancel.click(function(event){
+						$confirmCancel.click(function(event){
 							if(options.confirmCancel){
 								options.confirmCancel(event);
 							}
@@ -456,6 +457,17 @@
 						
 						$promptElements.append($promptButtons);
 						$toastElement.append($promptElements);
+					}
+				}
+				
+				function setConfirmElements(){
+					if(map.type === 'confirm'){
+						var $confirmButtons = $('<div/>');
+						$confirmButtons.append($confirmOk);
+						$confirmButtons.append($confirmCancel);
+						
+						$confirmElements.append($confirmButtons);
+						$toastElement.append($confirmElements);
 					}
 				}
 
