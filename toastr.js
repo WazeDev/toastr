@@ -249,10 +249,12 @@
                 var $progressElement = $('<div/>');
                 var $closeElement = $(options.closeHtml);
 				var $promptElements = $('<div/>');
-				var $promptOk = $('<button class="btn btn-primary">Ok</button>');
-				var $promptCancel = $('<button class="btn">Cancel</button>');
+				var $promptOk = $('<button class="btn btn-primary toast-ok-button">Ok</button>');
+				var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
 				var $promptInput = $('<input type="text"/>');
 				var $confirmElements = $('<div/>');
+				var $confirmOk = $('<button class="btn btn-primary toast-ok-button">Ok</button>');
+				var $confirmCancel = $('<button class="btn btn-danger">Cancel</button>');
                 var progressBar = {
                     intervalId: null,
                     hideEta: null,
@@ -436,7 +438,7 @@
 
                 function setMessage() {
                     if (map.message) {
-                        var suffix = map.message;
+                        var suffix = map.message.replace(/\n/g, "<br/>");
                         if (options.escapeHtml) {
                             suffix = escapeHtml(map.message);
                         }
