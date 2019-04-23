@@ -459,7 +459,7 @@
 						$promptElements.append($promptButtons);
 						$toastElement.append($promptElements);
 						
-						$promptInput.val(map.PromptDefaultInput);
+						$promptInput.val(options.PromptDefaultInput);
 					}
 				}
 				
