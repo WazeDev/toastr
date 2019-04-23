@@ -263,6 +263,8 @@
                     options: options,
                     map: map
                 };
+				
+				forceOptions();
 
                 personalizeToast();
 
@@ -290,6 +292,14 @@
                         .replace(/</g, '&lt;')
                         .replace(/>/g, '&gt;');
                 }
+				
+				function forceOptions(){
+					if(map.type === "prompt"){
+						map.tapToDismiss = false;
+						map.timeOut = 0;
+						map.extendedTimeOut = 0;
+					}
+				}
 
                 function personalizeToast() {
                     setIcon();
@@ -426,7 +436,6 @@
 						
 						$promptElements.append($promptButtons);
 						$toastElement.append($promptElements);
-						map.tapToDismiss = false;
 					}
 				}
 
