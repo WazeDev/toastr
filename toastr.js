@@ -420,8 +420,11 @@
 				function setPromptElements(){
 					if(map.type === 'prompt'){
 						$promptElements.append($promptInput);
-						$promptElements.append($promptOk);
-						$promptElements.append($promptCancel);
+						var $promptButtons = $('<div/>');
+						$promptButtons.append($promptOk);
+						$promptButtons.append($promptCancel);
+						
+						$promptElements.append($promptButtons);
 						$toastElement.append($promptElements);
 						map.tapToDismiss = false;
 					}
