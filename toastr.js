@@ -177,7 +177,7 @@
             function getDefaults() {
                 return {
                     tapToDismiss: true,
-                    toastClass: 'toast',
+                    toastClass: 'toast-wazedev',
                     containerId: 'toast-container-wazedev',
                     debug: false,
 
