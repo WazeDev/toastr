@@ -37,7 +37,7 @@
                 prompt: prompt,
                 subscribe: subscribe,
                 success: success,
-                version: '2.1.4',
+                version: '2.1.5',
                 warning: warning
             };
 
@@ -247,6 +247,9 @@
                 var $progressElement = $('<div/>');
                 var $closeElement = $(options.closeHtml);
 				var $promptElements = $('<div/>');
+				var $promptOk = $('<button class="btn btn-primary">Ok</button>');
+				var $promptCancel = $('<button class="btn">Cancel</button>');
+				var $promptInput = $('<input type="text"/>');
 				var $confirmElements = $('<div/>');
                 var progressBar = {
                     intervalId: null,
@@ -338,12 +341,25 @@
                         });
                     }
 
-                    if (options.onclick) {
+                    if (options.onclick && options.type !== 'prompt') {
                         $toastElement.click(function (event) {
                             options.onclick(event);
                             hideToast();
                         });
                     }
+					
+					if(options.type === 'prompt'){
+						if(options.promptOK)
+							$promptOk.click(function(event){
+								options.promptOK(event);
+								hideToast(true);
+							}
+						if(options.promptCancel)
+							$promptCancel.click(function(event){
+								options.promptCancel(event);
+								hideToast(true);
+							}
+					}
                 }
 
                 function displayToast() {
@@ -401,8 +417,11 @@
 				
 				function setPromptElements(){
 					if(map.type === 'prompt'){
-						$promptElements.append('<button>Ok</button><button>Cancel</button>');
+						$promptElements.append($promptInput);
+						$promptElements.append($promptOk);
+						$promptElements.append($promptCancel);
 						$toastElement.append($promptElements);
+						map.tapToDismiss = false;
 					}
 				}
 
