@@ -252,7 +252,7 @@
 				var $promptElements = $('<div/>');
 				var $promptOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
 				var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
-				var $promptInput = $('<input type="text"/>');
+				var $promptInput = $('<input type="text" class="toast-prompt-input"/>');
 				var $confirmElements = $('<div/>');
 				var $confirmOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
 				var $confirmCancel = $('<button class="btn btn-danger">Cancel</button>');
