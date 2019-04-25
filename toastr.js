@@ -256,8 +256,10 @@
 		var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
 		var $promptInput = $('<input type="text" class="toast-prompt-input"/>');
 		var $confirmElements = $('<div/>');
-		var $confirmOk = $(`<button class="btn btn-primary toast-ok-btn">${options.ConfirmOkButtonText}</button>`);
-		var $confirmCancel = $(`<button class="btn btn-danger">${options.ConfirmCancelButtonText}</button>`);
+		var $confirmOk = $(`<button class="btn btn-primary toast-ok-btn"></button>`);
+		    $confirmOk.text(options.ConfirmOkButtonText);
+		var $confirmCancel = $(`<button class="btn btn-danger"></button>`);
+		    $confirmCancel.text(options.ConfirmCancelButtonText);
                 var progressBar = {
                     intervalId: null,
                     hideEta: null,
