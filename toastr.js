@@ -217,7 +217,9 @@
                     progressBar: false,
                     progressClass: 'toast-progress',
                     rtl: false,
-					PromptDefaultInput: ''
+		    PromptDefaultInput: '',
+		    ConfirmOkButtonText: 'Ok',
+		    ConfirmCancelButtonText: 'Cancel'
                 };
             }
 
@@ -235,7 +237,7 @@
                     iconClass = map.optionsOverride.iconClass || iconClass;
                 }
 
-				forceOptions();
+		forceOptions();
 				
                 if (shouldExit(options, map)) { return; }
 
@@ -249,13 +251,13 @@
                 var $messageElement = $('<div/>');
                 var $progressElement = $('<div/>');
                 var $closeElement = $(options.closeHtml);
-				var $promptElements = $('<div/>');
-				var $promptOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
-				var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
-				var $promptInput = $('<input type="text" class="toast-prompt-input"/>');
-				var $confirmElements = $('<div/>');
-				var $confirmOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
-				var $confirmCancel = $('<button class="btn btn-danger">Cancel</button>');
+		var $promptElements = $('<div/>');
+		var $promptOk = $('<button class="btn btn-primary toast-ok-btn">Ok</button>');
+		var $promptCancel = $('<button class="btn btn-danger">Cancel</button>');
+		var $promptInput = $('<input type="text" class="toast-prompt-input"/>');
+		var $confirmElements = $('<div/>');
+		var $confirmOk = $(`<button class="btn btn-primary toast-ok-btn">${options.ConfirmOkButtonText}</button>`);
+		var $confirmCancel = $(`<button class="btn btn-danger">${options.ConfirmCancelButtonText}</button>`);
                 var progressBar = {
                     intervalId: null,
                     hideEta: null,
@@ -267,8 +269,7 @@
                     startTime: new Date(),
                     options: options,
                     map: map
-                };
-				
+                };	
 
                 personalizeToast();
 
@@ -297,20 +298,20 @@
                         .replace(/>/g, '&gt;');
                 }
 				
-				function forceOptions(){
-					if(map.type === "prompt" || map.type === "confirm"){
-						options.tapToDismiss = false;
-						options.timeOut = 0;
-						options.extendedTimeOut = 0;
-					}
-				}
+		function forceOptions(){
+			if(map.type === "prompt" || map.type === "confirm"){
+				options.tapToDismiss = false;
+				options.timeOut = 0;
+				options.extendedTimeOut = 0;
+			}
+		}
 
                 function personalizeToast() {
                     setIcon();
                     setTitle();
                     setMessage();
-					setPromptElements();
-					setConfirmElements();
+		    setPromptElements();
+		    setConfirmElements();
                     setCloseButton();
                     setProgressBar();
                     setRTL();
