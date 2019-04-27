@@ -168,7 +168,8 @@
             function createContainer(options) {
                 $container = $('<div/>')
                     .attr('id', options.containerId)
-                    .addClass(options.positionClass);
+                    .addClass(options.positionClass)
+		    .addClass(options.containerClass);
 
                 $container.appendTo($(options.target));
                 return $container;
@@ -179,6 +180,7 @@
                     tapToDismiss: true,
                     toastClass: 'toast-wazedev',
                     containerId: 'toast-container-wazedev',
+		    containerClass: 'toast-container-wazedev',
                     debug: false,
 
                     showMethod: 'fadeIn', //fadeIn, slideDown, and show are built into jQuery
