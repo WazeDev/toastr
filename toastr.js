@@ -323,6 +323,7 @@
 				options.closeButton = false;
 			}
 			if(map.type === "debug"){
+				options.tapToDismiss = false;
 				options.timeOut = 0;
 				options.extendedTimeOut = 0;
 			}
