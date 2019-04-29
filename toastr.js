@@ -23,12 +23,14 @@
                 info: 'info',
                 prompt: 'prompt',
                 success: 'success',
-                warning: 'warning'
+                warning: 'warning',
+		debug: 'debug'
             };
 
             var wazedevtoastr = {
                 clear: clear,
                 confirm: confirm,
+		debug: debug,
                 remove: remove,
                 error: error,
                 getContainer: getContainer,
@@ -130,6 +132,16 @@
                     title: title
                 });
             }
+		
+            function debug(message, title, optionsOverride){
+                return notify({
+                    type: toastType.debug,
+                    iconClass: getOptions().iconClasses.debug,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
 
             function remove($toastElement) {
                 var options = getOptions();
@@ -199,6 +211,7 @@
                     extendedTimeOut: 1000,
                     iconClasses: {
                         confirm: 'toast-confirm',
+			debug: 'toast-debug',
                         error: 'toast-error',
                         info: 'toast-info',
                         prompt: 'toast-prompt',
@@ -305,6 +318,11 @@
 		function forceOptions(){
 			if(map.type === "prompt" || map.type === "confirm"){
 				options.tapToDismiss = false;
+				options.timeOut = 0;
+				options.extendedTimeOut = 0;
+				options.closeButton: false;
+			}
+			if(map.type === "debug"){
 				options.timeOut = 0;
 				options.extendedTimeOut = 0;
 			}
