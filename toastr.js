@@ -320,7 +320,7 @@
 				options.tapToDismiss = false;
 				options.timeOut = 0;
 				options.extendedTimeOut = 0;
-				options.closeButton: false;
+				options.closeButton = false;
 			}
 			if(map.type === "debug"){
 				options.timeOut = 0;
