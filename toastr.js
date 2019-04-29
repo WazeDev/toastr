@@ -326,6 +326,7 @@
 				options.tapToDismiss = false;
 				options.timeOut = 0;
 				options.extendedTimeOut = 0;
+				options.closeButton = true;
 			}
 		}
 
@@ -387,37 +388,37 @@
                         });
                     }
 					
-					if(map.type === 'prompt'){
-						$promptOk.click(function(event){
-							if(options.promptOK){
-								options.promptOK(event, $promptInput.val());
-							}
-							hideToast(true);
-						});
-						
-						$promptCancel.click(function(event){
-							if(options.promptCancel){
-								options.promptCancel(event);
-							}
-							hideToast(true);
-						});
+			if(map.type === 'prompt'){
+				$promptOk.click(function(event){
+					if(options.promptOK){
+						options.promptOK(event, $promptInput.val());
 					}
-					
-					if(map.type === 'confirm'){
-						$confirmOk.click(function(event){
-							if(options.confirmOK){
-								options.confirmOK(event);
-							}
-							hideToast(true);
-						});
-						
-						$confirmCancel.click(function(event){
-							if(options.confirmCancel){
-								options.confirmCancel(event);
-							}
-							hideToast(true);
-						});
+					hideToast(true);
+				});
+
+				$promptCancel.click(function(event){
+					if(options.promptCancel){
+						options.promptCancel(event);
 					}
+					hideToast(true);
+				});
+			}
+
+			if(map.type === 'confirm'){
+				$confirmOk.click(function(event){
+					if(options.confirmOK){
+						options.confirmOK(event);
+					}
+					hideToast(true);
+				});
+
+				$confirmCancel.click(function(event){
+					if(options.confirmCancel){
+						options.confirmCancel(event);
+					}
+					hideToast(true);
+				});
+			}
                 }
 
                 function displayToast() {
