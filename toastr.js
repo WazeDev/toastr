@@ -134,6 +134,9 @@
             }
 		
             function debug(message, title, optionsOverride){
+	        console.groupCollapsed(title, 'background: #252525; color: #e94f64');
+	        console.log(message);
+	        console.groupEnd();
                 return notify({
                     type: toastType.debug,
                     iconClass: getOptions().iconClasses.debug,
