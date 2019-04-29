@@ -50,10 +50,20 @@
 		color: @white;
 	}
 
-		a:hover {
-			color: @light-grey;
-			text-decoration: none;
-		}
+	a:hover {
+		color: @light-grey;
+		text-decoration: none;
+	}
+}
+
+.toast-debug
+{
+	width: 700px !important;
+	
+	> .toast-message {
+		max-height: 400px;
+		overflow-y: auto;
+	}
 }
 
 .toast-close-button {
