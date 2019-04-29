@@ -13,6 +13,13 @@
   color: #CCCCCC;
   text-decoration: none;
 }
+.toast-debug {
+  width: 700px !important;
+}
+.toast-debug > .toast-message {
+  max-height: 400px;
+  overflow-y: auto;
+}
 .toast-close-button {
   position: relative;
   right: -0.3em;
