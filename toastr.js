@@ -247,6 +247,8 @@
             }
 
             function notify(map) {
+		    if(map.message.length === 0)
+			    return;
                 var options = getOptions();
                 var iconClass = map.iconClass || options.iconClass;
 
@@ -477,30 +479,30 @@
                     }
                 }
 				
-				function setPromptElements(){
-					if(map.type === 'prompt'){
-						$promptElements.append($promptInput);
-						var $promptButtons = $('<div/>');
-						$promptButtons.append($promptOk);
-						$promptButtons.append($promptCancel);
-						
-						$promptElements.append($promptButtons);
-						$toastElement.append($promptElements);
-						
-						$promptInput.val(options.PromptDefaultInput);
-					}
-				}
-				
-				function setConfirmElements(){
-					if(map.type === 'confirm'){
-						var $confirmButtons = $('<div/>');
-						$confirmButtons.append($confirmOk);
-						$confirmButtons.append($confirmCancel);
-						
-						$confirmElements.append($confirmButtons);
-						$toastElement.append($confirmElements);
-					}
-				}
+		function setPromptElements(){
+			if(map.type === 'prompt'){
+				$promptElements.append($promptInput);
+				var $promptButtons = $('<div/>');
+				$promptButtons.append($promptOk);
+				$promptButtons.append($promptCancel);
+
+				$promptElements.append($promptButtons);
+				$toastElement.append($promptElements);
+
+				$promptInput.val(options.PromptDefaultInput);
+			}
+		}
+
+		function setConfirmElements(){
+			if(map.type === 'confirm'){
+				var $confirmButtons = $('<div/>');
+				$confirmButtons.append($confirmOk);
+				$confirmButtons.append($confirmCancel);
+
+				$confirmElements.append($confirmButtons);
+				$toastElement.append($confirmElements);
+			}
+		}
 
                 function setCloseButton() {
                     if (options.closeButton) {
